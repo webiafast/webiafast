@@ -11,28 +11,6 @@ import PlanesSlider from '@/components/PlanesSlider'
 
 const planes = [
   {
-    id: 'basico',
-    nombre: 'Básico',
-    precio: '1.000',
-    descripcion: 'Ideal para emprendedores que recién comienzan',
-    color: 'from-blue-500/20 to-indigo-500/20',
-    border: 'border-blue-500/30',
-    badge: null,
-    features: [
-      '1 Landing page profesional',
-      '4-6 secciones optimizadas',
-      'Imágenes de stock con IA',
-      'Formulario de contacto',
-      'SEO básico incluido',
-      'Descarga ZIP',
-      '1 revisión incluida',
-      'Soporte por email',
-    ],
-    limitaciones: ['Sin imágenes propias', 'Sin deploy automático'],
-    cta: 'Crear mi web básica',
-    ctaColor: 'bg-blue-600 hover:bg-blue-500',
-  },
-  {
     id: 'pro',
     nombre: 'Pro',
     precio: '100.000',
@@ -669,7 +647,7 @@ const faqData = [
   },
   {
     pregunta: '¿Cuánto cuesta?',
-    respuesta: 'Tenemos 5 planes: Básico ($1.000), Pro ($100.000), Premium ($300.000), Broker ($700.000) y Restaurante ($500.000). Es un pago único, sin mensualidades obligatorias. El precio incluye la generación del sitio y las ediciones del plan.',
+    respuesta: 'Tenemos 4 planes: Pro ($100.000), Premium ($300.000), Broker ($700.000) y Restaurante ($500.000). Es un pago único, sin mensualidades obligatorias. El precio incluye la generación del sitio y las ediciones del plan.',
   },
   {
     pregunta: '¿Puedo editar mi sitio después?',
