@@ -9,14 +9,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'WeblyNow — Crea tu sitio web con IA en minutos',
+  title: 'Webiafast — Crea tu sitio web con IA en minutos',
   description:
     'Genera un sitio web profesional con inteligencia artificial. Ingresa el contenido de tu negocio y obtén un sitio listo para publicar en minutos.',
   keywords: ['sitio web', 'IA', 'inteligencia artificial', 'crear web', 'diseño web', 'Chile'],
   openGraph: {
-    title: 'WeblyNow — Crea tu sitio web con IA',
-    description: 'Tu sitio web profesional en minutos con IA',
+    title: 'Webiafast — Crea tu sitio web con IA',
+    description: 'Tu sitio web profesional en minutos con IA. Powered by Claude AI.',
     type: 'website',
+    url: 'https://webiafast.com',
+    siteName: 'Webiafast',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Webiafast — Crea tu sitio web con IA',
+    description: 'Tu sitio web profesional en minutos con IA. Powered by Claude AI.',
   },
 }
 
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>
