@@ -61,7 +61,7 @@ function RegistroContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#080B14] bg-grid flex items-center justify-center p-4">
+    <div className="theme-dark min-h-screen bg-[#080B14] bg-grid flex items-center justify-center p-4">
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="orb absolute top-1/4 -left-20 w-72 h-72 bg-purple-600/15" />
         <div className="orb absolute bottom-1/4 -right-20 w-72 h-72 bg-indigo-600/15" style={{ animationDelay: '2s' }} />

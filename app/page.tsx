@@ -2,7 +2,7 @@ import Link from 'next/link'
 import {
   Zap, Globe, Sparkles, Shield, ArrowRight,
   Star, Rocket, Code2, Palette, BarChart3, MessageSquare,
-  ChevronRight, ExternalLink
+  ChevronRight
 } from 'lucide-react'
 import { getPlanesConfig } from '@/lib/planes'
 import PlanesSlider from '@/components/PlanesSlider'
@@ -404,135 +404,6 @@ async function Planes() {
   )
 }
 
-// ─── Portfolio ───────────────────────────────────────────────────────────────
-
-const sitiosPortfolio = [
-  {
-    nombre: 'CódigoSafe',
-    descripcion: 'Empresa de ciberseguridad y soluciones digitales',
-    url: 'https://codigosafe.cl',
-    tag: 'Ciberseguridad',
-    color: 'from-cyan-500/20 to-blue-500/20',
-    border: 'border-cyan-500/30',
-    tagColor: 'bg-cyan-100 text-cyan-700',
-  },
-  {
-    nombre: 'Building Manager Chile',
-    descripcion: 'Servicios profesionales de administración de edificios',
-    url: 'https://buildingmanagerchile.cl',
-    tag: 'Administración',
-    color: 'from-amber-500/20 to-orange-500/20',
-    border: 'border-amber-500/30',
-    tagColor: 'bg-amber-100 text-amber-700',
-  },
-  {
-    nombre: 'Kimsa Software',
-    descripcion: 'Fábrica de software y desarrollo tecnológico a medida',
-    url: 'https://kimsa.io',
-    tag: 'Software',
-    color: 'from-violet-500/20 to-purple-500/20',
-    border: 'border-violet-500/30',
-    tagColor: 'bg-violet-100 text-violet-700',
-  },
-  {
-    nombre: 'Jaime Gómez',
-    descripcion: 'Portfolio profesional de desarrollador full stack',
-    url: 'https://jaimegomez.work',
-    tag: 'Portfolio',
-    color: 'from-emerald-500/20 to-teal-500/20',
-    border: 'border-emerald-500/30',
-    tagColor: 'bg-emerald-100 text-emerald-700',
-  },
-]
-
-function Portfolio() {
-  return (
-    <section className="py-24 px-6 bg-white" id="portfolio">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 ai-badge px-3 py-1.5 rounded-full text-indigo-600 text-xs font-semibold mb-4 uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
-            Sitios reales creados con Webiafast
-          </div>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
-            Resultados que{' '}
-            <span className="gradient-text">hablan solos</span>
-          </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Empresas reales que confiaron en Webiafast para su presencia digital.
-            Cada sitio generado con IA en minutos.
-          </p>
-        </div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {sitiosPortfolio.map((sitio) => (
-            <a
-              key={sitio.url}
-              href={sitio.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group card-surface rounded-2xl overflow-hidden"
-            >
-              {/* Browser chrome */}
-              <div className="flex items-center gap-1.5 px-4 py-2.5 bg-gray-50 border-b border-gray-100">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                <div className="ml-3 flex-1 bg-white rounded-md px-3 py-0.5 text-xs text-gray-400 font-mono border border-gray-100 truncate">
-                  {sitio.url.replace('https://', '')}
-                </div>
-              </div>
-              {/* Screenshot */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`https://image.thum.io/get/width/1200/crop/675/noanimate/${sitio.url}`}
-                  alt={`Preview de ${sitio.nombre}`}
-                  loading="eager"
-                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-              </div>
-
-              {/* Info */}
-              <div className="p-5 flex items-start justify-between gap-3">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900 text-base">{sitio.nombre}</h3>
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${sitio.tagColor}`}>
-                      {sitio.tag}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-500">{sitio.descripcion}</p>
-                </div>
-                <div className="shrink-0 w-9 h-9 rounded-xl bg-gray-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors">
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-indigo-600 transition-colors" />
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        {/* Stats bar */}
-        <div className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto">
-          {[
-            { num: '50+', label: 'sitios publicados' },
-            { num: '< 5min', label: 'tiempo de generación' },
-            { num: '100%', label: 'con IA' },
-          ].map((s) => (
-            <div key={s.label} className="text-center p-4 card-surface rounded-xl">
-              <div className="text-2xl font-black gradient-text">{s.num}</div>
-              <div className="text-xs text-gray-500 mt-0.5">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Testimonios() {
   return (
     <section id="testimonios" className="py-24 bg-[#F8FAFF]">
@@ -733,7 +604,6 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <ComoFunciona />
-      <Portfolio />
       <Planes />
       <Testimonios />
       <FAQChat />

@@ -51,7 +51,7 @@ function LoginContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#080B14] bg-grid flex items-center justify-center p-4">
+    <div className="theme-dark min-h-screen bg-[#080B14] bg-grid flex items-center justify-center p-4">
       {/* Background orbs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="orb absolute top-1/4 -left-20 w-72 h-72 bg-indigo-600/15" />
@@ -65,7 +65,7 @@ function LoginContent() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <span className="text-2xl font-black gradient-text">WeblyNow</span>
+            <span className="text-2xl font-black gradient-text">Webiafast</span>
           </Link>
           <h1 className="text-2xl font-bold mb-2">Bienvenido de vuelta</h1>
           <p className="text-muted-foreground text-sm">Ingresa a tu cuenta para continuar</p>
