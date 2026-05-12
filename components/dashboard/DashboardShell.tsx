@@ -13,7 +13,7 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#080B14] flex">
+    <div className="theme-dark min-h-screen bg-[#080B14] flex">
       {/* Sidebar */}
       <Sidebar user={user} open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
