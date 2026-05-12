@@ -70,7 +70,7 @@ export default function PlanesSlider({ planes }: { planes: Plan[] }) {
         disabled={active === 0}
         className={cn(
           'absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border flex items-center justify-center transition-all',
-          'bg-[#0a0d1a] border-white/10 text-white hover:border-white/30 hover:bg-white/5',
+          'bg-white border-gray-200 text-gray-700 hover:border-indigo-300 hover:bg-indigo-50 shadow-sm',
           'disabled:opacity-0 disabled:pointer-events-none',
           'hidden sm:flex'
         )}
@@ -90,11 +90,10 @@ export default function PlanesSlider({ planes }: { planes: Plan[] }) {
           <div
             key={plan.id}
             className={cn(
-              'relative rounded-2xl border flex flex-col flex-shrink-0 snap-start',
+              'relative rounded-2xl border flex flex-col flex-shrink-0 snap-start bg-white',
               plan.border,
-              `bg-gradient-to-b ${plan.color}`,
-              'p-8',
-              plan.badge === 'MÁS POPULAR' ? 'scale-[1.02] glow-purple' : '',
+              'p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1',
+              plan.badge === 'MÁS POPULAR' ? 'shadow-indigo-200/60 shadow-xl ring-1 ring-indigo-500/20' : '',
               // responsive widths
               'w-[calc(100%-2rem)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]'
             )}
@@ -109,24 +108,24 @@ export default function PlanesSlider({ planes }: { planes: Plan[] }) {
             )}
 
             <div className="mb-6">
-              <h3 className="text-xl font-bold mb-1">{plan.nombre}</h3>
-              <p className="text-muted-foreground text-sm mb-4">{plan.descripcion}</p>
+              <h3 className="text-xl font-bold mb-1 text-gray-900">{plan.nombre}</h3>
+              <p className="text-gray-500 text-sm mb-4">{plan.descripcion}</p>
               <div className="flex items-baseline gap-1">
-                <span className="text-muted-foreground text-sm">CLP$</span>
-                <span className="text-4xl font-black">{plan.precio}</span>
+                <span className="text-gray-400 text-sm">CLP$</span>
+                <span className="text-4xl font-black text-gray-900">{plan.precio}</span>
               </div>
-              <p className="text-muted-foreground text-xs mt-1">Pago único · sin mensualidad</p>
+              <p className="text-gray-400 text-xs mt-1">Pago único · sin mensualidad</p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm">
-                  <Check className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
-                  <span>{feature}</span>
+                  <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
+                  <span className="text-gray-700">{feature}</span>
                 </li>
               ))}
               {plan.limitaciones.map((limit, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground line-through">
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-400 line-through">
                   <span className="w-4 h-4 mt-0.5 shrink-0 text-center">✕</span>
                   <span>{limit}</span>
                 </li>
@@ -152,7 +151,7 @@ export default function PlanesSlider({ planes }: { planes: Plan[] }) {
         disabled={active >= maxIndex}
         className={cn(
           'absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border flex items-center justify-center transition-all',
-          'bg-[#0a0d1a] border-white/10 text-white hover:border-white/30 hover:bg-white/5',
+          'bg-white border-gray-200 text-gray-700 hover:border-indigo-300 hover:bg-indigo-50 shadow-sm',
           'disabled:opacity-0 disabled:pointer-events-none',
           'hidden sm:flex'
         )}
@@ -170,8 +169,8 @@ export default function PlanesSlider({ planes }: { planes: Plan[] }) {
             className={cn(
               'rounded-full transition-all',
               active === i
-                ? 'w-6 h-2 bg-indigo-400'
-                : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                ? 'w-6 h-2 bg-indigo-500'
+                : 'w-2 h-2 bg-gray-200 hover:bg-indigo-300'
             )}
             aria-label={`Ir al plan ${i + 1}`}
           />
